@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World from -- Mohammed Alsailani -- in 3308 !'
+    return 'Hello World from -- Mohammed Alsailani -- in 3308'
 
 
 @app.route('/db_test')
@@ -17,7 +17,7 @@ def testing():
 
 @app.route('/db_create')
 def creating():
-    conn = psycopg2.connect("postgres://render_example_ocz5_user:...")
+    conn = psycopg2.connect("postgresql://mohammed_db_user:UmSc7JQQWVM3IqL8sbwxtGBI8I4cINRV@dpg-csj5d6btq21c73d9b840-a/mohammed_db")
     cur = conn.cursor()
     cur.execute('''
         CREATE TABLE IF NOT EXISTS Basketball (
@@ -35,7 +35,7 @@ def creating():
 
 @app.route('/db_insert')
 def inserting():
-    conn = psycopg2.connect("postgres://render_example_ocz5_user:...")
+    conn = psycopg2.connect("postgresql://mohammed_db_user:UmSc7JQQWVM3IqL8sbwxtGBI8I4cINRV@dpg-csj5d6btq21c73d9b840-a/mohammed_db")
     cur = conn.cursor()
     cur.execute('''
         INSERT INTO Basketball (First, Last, City, Name, Number)
@@ -53,7 +53,7 @@ def inserting():
 
 @app.route('/db_select')
 def selecting():
-    conn = psycopg2.connect("postgres://render_example_ocz5_user:...")
+    conn = psycopg2.connect("postgresql://mohammed_db_user:UmSc7JQQWVM3IqL8sbwxtGBI8I4cINRV@dpg-csj5d6btq21c73d9b840-a/mohammed_db")
     cur = conn.cursor()
     cur.execute('''
         SELECT * FROM Basketball;
@@ -75,7 +75,7 @@ def selecting():
 
 @app.route('/db_drop')
 def dropping():
-    conn = psycopg2.connect("postgres://render_example_ocz5_user:...")
+    conn = psycopg2.connect("postgresql://mohammed_db_user:UmSc7JQQWVM3IqL8sbwxtGBI8I4cINRV@dpg-csj5d6btq21c73d9b840-a/mohammed_db")
     cur = conn.cursor()
     cur.execute('''
         DROP TABLE Basketball;
